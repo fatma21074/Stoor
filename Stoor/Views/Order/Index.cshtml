@@ -1,0 +1,33 @@
+﻿@model Stoor.Models.Dtos.UserOrderDtos
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .page-container {
+            position: relative;
+            padding-left: 10px;
+            padding-right: 500px;
+            padding-bottom: 30px;
+            padding-top: 2px;
+        }
+
+    </style>
+</head>
+    <body>
+        <h2>Order</h2>
+
+<form asp-action="Create">
+    <input hidden asp-for="UserId">
+    <div class="form-group">
+        <input hidden asp-for="ProductId" class="form-control" />
+    </div>
+    <h3>FirstName:@Model.FirstName</h3>
+    <h3>Email:@Model.Email</h3>
+    <h3>Address:@Model.Address</h3>
+    <h3>NameProduct:@Model.Name</h3>
+    <h3>Price:@Model.Price</h3>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+    </body>
+    </html>

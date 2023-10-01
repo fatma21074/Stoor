@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Stoor.Models.Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .page-container {
+            position: relative;
+            padding-left: 10px;
+            padding-right: 500px;
+            padding-bottom: 20px;
+            padding-top: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h2>Products</h2>
+
+        <p>
+            <a asp-action="Create" class="btn btn-outline-success">Create New</a>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => product.Name)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@product.Id">Details</a> 
+                            <a asp-action="Update" asp-route-id="@product.Id">Update</a> 
+                            <a asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
